@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konzentration verbessern</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Konzentration verbessern</h1>
+        <form id="situationForm">
+            <label for="situation">Wähle deine Situation:</label>
+            <select id="situation" name="situation">
+                <option value="">Bitte wähle eine Situation aus</option>
+                <option value="stress">Stress</option>
+                <option value="muedigkeit">Müdigkeit</option>
+                <option value="laerm">Lärm</option>
+                <option value="schlafmangel">Schlafmangel</option>
+                <option value="nervositaet">Nervosität</option>
+                <option value="lichtmangel">Lichtmangel</option>
+                <option value="unordnung">Unordnung</option>
+                <option value="langeweile">Langeweile</option>
+                <option value="digitale_ablenkungen">Digitale Ablenkungen</option>
+                <option value="ungesunde_ernaehrung">Ungesunde Ernährung</option>
+                <option value="soziale_ablenkungen">Soziale Ablenkungen</option>
+            </select>
+            <button type="button" onclick="getSolution()">Lösungsvorschläge anzeigen</button>
+        </form>
+        <div id="solutionContainer" style="display: none;">
+            <h2>Lösungsvorschläge</h2>
+            <ul id="solutionList"></ul>
+        </div>
+    </div>
+
+    <script>
+        function getSolution() {
+            const situation = document.getElementById('situation').value;
+            const solutionList = document.getElementById('solutionList');
+            solutionList.innerHTML = '';
+
+            let solutions = [];
+
+            switch(situation) {
+                case 'stress':
+                    solutions.push('1. Tief durchatmen: Führe 5 tiefe Atemzüge durch, um Stress abzubauen.');
+                    solutions.push('2. Kurzer Spaziergang: Gehe für ein paar Minuten nach draußen, um frische Luft zu schnappen.');
+                    solutions.push('3. Entspannungsmusik hören: Lausche beruhigender Musik, um dich zu entspannen.');
+                    break;
+                case 'muedigkeit':
+                    solutions.push('1. Kurz schlafen: Nimm ein 20-minütiges Nickerchen, um deine Energie wieder aufzuladen.');
+                    solutions.push('2. Fruchtsnack: Iss einen Apfel oder eine Banane für einen Energieschub.');
+                    solutions.push('3. Wasser trinken: Trinke ein Glas Wasser, um dich zu erfrischen.');
+                    break;
+                case 'laerm':
+                    solutions.push('1. Ohrenstöpsel benutzen: Blockiere störende Geräusche mit Ohrenstöpseln.');
+                    solutions.push('2. Kopfhörer aufsetzen: Höre beruhigende Musik, um den Lärm zu überdecken.');
+                    solutions.push('3. Ruhezone finden: Suche einen ruhigen Ort auf, um dich zu konzentrieren.');
+                    break;
+                case 'schlafmangel':
+                    solutions.push('1. Schlafrhythmus einhalten: Gehe jeden Tag zur gleichen Zeit schlafen und stehe zur gleichen Zeit auf.');
+                    solutions.push('2. Elektronik ausschalten: Reduziere vor dem Schlafengehen Bildschirmzeit, um besser einzuschlafen.');
+                    solutions.push('3. Entspannungsübungen: Führe vor dem Schlafengehen Entspannungsübungen durch, um besser zu schlafen.');
+                    break;
+                case 'nervositaet':
+                    solutions.push('1. Progressive Muskelentspannung: Spanne und entspanne deine Muskeln, um Stress abzubauen.');
+                    solutions.push('2. Positive Visualisierung: Stelle dir eine positive Situation vor, um Nervosität zu reduzieren.');
+                    solutions.push('3. Langsam atmen: Führe tiefe Atemzüge durch, um dich zu beruhigen.');
+                    break;
+                    case 'lichtmangel':
+    solutions.push('1. Mehr natürliches Licht: Verbringe mehr Zeit im Tageslicht, um deine Stimmung und Energie zu steigern.');
+    solutions.push('2. Lichttherapie: Nutze eine Lichttherapielampe, um den Mangel an Sonnenlicht auszugleichen.');
+    solutions.push('3. Helle Farben: Verwende helle Farben in deiner Umgebung, um sie aufzuhellen und deine Stimmung zu verbessern.');
+    break;
+case 'unordnung':
+    solutions.push('1. Aufräumen: Schaffe Ordnung in deiner Umgebung, um Ablenkungen zu reduzieren und deine Konzentration zu verbessern.');
+    solutions.push('2. Organisieren: Verwende Ordnungssysteme wie Regale und Aufbewahrungsboxen, um deine Sachen geordnet zu halten.');
+    solutions.push('3. Minimalismus: Reduziere unnötigen Besitz und schaffe eine aufgeräumte Umgebung für mehr Klarheit und Fokus.');
+    break;
+case 'langeweile':
+    solutions.push('1. Neue Aktivitäten: Probiere neue Hobbys oder Aktivitäten aus, um deine Neugier zu wecken und dich zu stimulieren.');
+    solutions.push('2. Kreativität: Erweitere deine Kreativität durch Malen, Schreiben oder Basteln, um deine Denkweise zu beleben.');
+    solutions.push('3. Herausforderungen: Setze dir neue Ziele oder Herausforderungen, um deine Motivation und Engagement zu steigern.');
+    break;
+case 'digitale_ablenkungen':
+    solutions.push('1. Zeitmanagement: Plane feste Zeiten für die Nutzung digitaler Geräte und halte dich daran, um Ablenkungen zu minimieren.');
+    solutions.push('2. App-Beschränkungen: Verwende Tools oder Apps, um den Zugriff auf ablenkende Websites oder Apps zu beschränken.');
+    solutions.push('3. Bildschirmfreie Zeit: Schalte digitale Geräte in regelmäßigen Abständen aus, um deine Konzentration wiederherzustellen.');
+    break;
+case 'ungesunde_ernaehrung':
+    solutions.push('1. Gesunde Snacks: Verzehre gesunde Snacks wie Obst, Gemüse oder Nüsse, um deine Energie stabil zu halten.');
+    solutions.push('2. Ausgewogene Mahlzeiten: Achte auf eine ausgewogene Ernährung mit Protein, Kohlenhydraten und gesunden Fetten.');
+    solutions.push('3. Wasser trinken: Bleibe hydratisiert, indem du ausreichend Wasser trinkst, um Müdigkeit und Konzentrationsschwäche zu vermeiden.');
+    break;
+case 'soziale_ablenkungen':
+    solutions.push('1. Kommunikation: Kläre mit anderen, dass du ungestörte Arbeitsphasen benötigst, um deine Konzentration zu steigern.');
+    solutions.push('2. Zeitmanagement: Plane bewusst Zeit für soziale Interaktionen ein, um Ablenkungen während der Arbeit zu reduzieren.');
+    solutions.push('3. Arbeitsumgebung: Schaffe klare Grenzen und ein Arbeitsumfeld, das soziale Ablenkungen minimiert, z. B. mit Kopfhörern.');
+    break;
+
+            }
+
+            solutions.forEach(function(solution) {
+                const li = document.createElement('li');
+                li.textContent = solution;
+                solutionList.appendChild(li);
+            });
+
+            document.getElementById('solutionContainer').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
